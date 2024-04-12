@@ -1,4 +1,7 @@
 "use client";
+
+import { Alert } from "@mui/material";
+
 export default function errorPage() {
-    return <p>error...</p>
+    return <Alert severity="error">An error occurred</Alert>;
 }

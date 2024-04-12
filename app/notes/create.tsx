@@ -2,6 +2,13 @@
 // import { useRouter } from 'next/router';
 import { useState } from 'react';
 import PocketBase from 'pocketbase';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Typography } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 export const dynamic = 'auto',
   dynamicParams = true,
@@ -25,19 +32,50 @@ export default function CreateNote() {
 
     return (
         <form onSubmit={create}>
-            <h3>Create a new note</h3>
-            <input
+            <Box>
+                <Typography variant="h4" gutterBottom>
+                Create a new note
+                </Typography>
+            </Box>
+            {/* <input
                 type="text"
                 placeholder="Title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-            />
-            <textarea
+            /> */}
+            <div>
+                <TextField
+                required
+                id="standard-required"
+                label="Title"
+                variant="standard"
+                rows={5}
+                onChange={(e) => setTitle(e.target.value)}
+                />
+            </div>
+            
+            <div>
+                <TextField
+                required
+                id="standard-multiline-static"
+                label="Content"
+                multiline
+                rows={4}
+                //   defaultValue="Default Value"
+                variant="standard"
+                onChange={(e) => setContent(e.target.value)}
+                />
+            </div>
+            
+            {/* <textarea
                 placeholder="Content"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-            />
-            <button type="submit">Create</button>
+            /> */}
+            {/* <button type="submit">Create</button> */}
+            <br></br>
+            <Button variant="outlined" type="submit">Create</Button>
+            
         </form>
     )
 }
