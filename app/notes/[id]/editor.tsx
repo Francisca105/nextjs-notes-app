@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { redirect } from 'next/navigation';
 import { useState } from 'react';
 
 export const dynamic = 'auto',
